@@ -39,6 +39,7 @@ Access at:
 
 3. **Digitally sign the log file:**
 ```
+cd crypto
 python crypto/crypto_utils.py
 ```
 
