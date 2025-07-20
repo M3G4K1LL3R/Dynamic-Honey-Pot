@@ -40,7 +40,7 @@ Access at:
 3. **Digitally sign the log file:**
 ```
 cd crypto
-python crypto/crypto_utils.py
+python crypto_utils.py
 ```
 
 4. **Simulate sending an email alert:**
