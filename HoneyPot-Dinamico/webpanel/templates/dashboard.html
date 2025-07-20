@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HoneyPot Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .counter { margin: 10px 0; }
+        .filter-links a { margin-right: 10px; }
+    </style>
+    <meta http-equiv="refresh" content="10">
+</head>
+<body>
+    <h1>Dashboard HoneyPot</h1>
+
+    <div class="counter">
+        <strong>Total de acessos:</strong> {{ total }}<br>
+        <strong>SSH:</strong> {{ counts['SSH'] }} |
+        <strong>FTP:</strong> {{ counts['FTP'] }} |
+        <strong>HTTP:</strong> {{ counts['HTTP'] }}
+    </div>
+
+    <div class="filter-links">
+        <strong>Filtrar por serviço:</strong>
+        <a href="/">Todos</a>
+        <a href="/?service=SSH">SSH</a>
+        <a href="/?service=FTP">FTP</a>
+        <a href="/?service=HTTP">HTTP</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>Logs</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>Última atualização automática a cada 10 segundos.</p>
+</body>
+</html>
