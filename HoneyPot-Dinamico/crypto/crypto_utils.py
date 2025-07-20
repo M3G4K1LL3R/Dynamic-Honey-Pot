@@ -1,4 +1,4 @@
-
+import os
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import hashes
 
@@ -19,9 +19,13 @@ def assinar_log(chave_privada, mensagem):
 if __name__ == "__main__":
     chave_privada = gerar_chave_privada()
     log_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs', 'honeypot.log')
-with open(log_path, 'r') as f:
+
+    with open(log_path, 'r') as f:
         conteudo = f.read()
+
     assinatura = assinar_log(chave_privada, conteudo)
-    with open('../logs/honeypot_signature.sig', 'wb') as sig_file:
-        sig_file.write(assinatura)
-    print("Log assinado e guardado em honeypot_signature.sig")
+
+with open('../logs/honeypot_signature.sig', 'wb') as sig_file:
+    sig_file.write(assinatura)
+
+print("Log assinado e guardado em honeypot_signature.sig")
