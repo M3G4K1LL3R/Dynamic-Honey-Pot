@@ -1,53 +1,55 @@
+# Dynamic HoneyPot Project
 
-# Projeto HoneyPot Dinâmico
-
-Este projeto implementa um sistema de HoneyPot com serviços falsos (**SSH, FTP, HTTP**), um painel web em **Flask** para visualização dos logs, sistema de alertas simulados e assinatura digital dos logs.
+This project implements a **dynamic HoneyPot system** in Python that emulates fake services (**SSH, FTP, HTTP**), providing real-time logging, a Flask-based web dashboard, simulated alerting, and digital signing of the logs.
 
 ---
 
-## ✅ Requisitos
+## ✅ Requirements
 - Python 3.x
-- pip install flask cryptography
+- Install dependencies:
+```
+pip install flask cryptography
+```
 
 ---
 
-## 📂 Estrutura de Pastas
-- `honeypots/`: contém `ssh_server.py`, `ftp_server.py`, `http_server.py`
-- `webpanel/`: contém o painel Flask (`app.py`) e o template HTML
-- `alerts/`: alerta de e-mail (simulado)
-- `crypto/`: assinatura digital dos logs
-- `logs/`: logs gerados pelos honeypots
+## 📂 Project Structure
+- `honeypots/`: Contains `ssh_server.py`, `ftp_server.py`, `http_server.py`
+- `webpanel/`: Flask dashboard (`app.py`) and the HTML template
+- `alerts/`: Simulated email alert
+- `crypto/`: Digital signature for the logs
+- `logs/`: Generated logs by the honeypots
 
 ---
 
-## 🚀 Como Usar
+## 🚀 How to Use
 
-1. **Iniciar todos os honeypots de uma vez:**
+1. **Start all honeypots at once:**
 ```
 python start_all.py
 ```
 
-2. **Ver os logs pelo Dashboard web:**
+2. **View logs on the web dashboard:**
 ```
 cd webpanel
 python app.py
 ```
-Aceder em:  
+Access at:  
 [http://localhost:5000](http://localhost:5000)
 
-3. **Assinar digitalmente o ficheiro de logs:**
+3. **Digitally sign the log file:**
 ```
 python crypto/crypto_utils.py
 ```
 
-4. **Simular envio de alerta por e-mail:**
+4. **Simulate sending an email alert:**
 ```
 python alerts/email_alert.py
 ```
 
 ---
 
-## 🧪 Testes dos Honeypots
+## 🧪 Testing the Honeypots
 
 - SSH:  
 ```
@@ -64,14 +66,14 @@ telnet localhost 2121
 curl http://localhost:8080
 ```
 
-Verificar as atualizações no **Dashboard web**.
+Check the updates on the **web dashboard**.
 
 ---
 
-## ⛔ Parar os serviços
-Ctrl+C no terminal onde está a correr o `start_all.py` ou cada honeypot individualmente.
+## ⛔ Stop Services
+Press **Ctrl+C** on the terminal where `start_all.py` or each honeypot is running.
 
 ---
 
-## 🔒 Licença
-MIT License - veja o ficheiro LICENSE para mais informações.
+## 🔒 License
+MIT License - see the LICENSE file for more details.
