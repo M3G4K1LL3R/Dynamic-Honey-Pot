@@ -4,7 +4,7 @@ This project implements a **dynamic HoneyPot system** in Python that emulates fa
 
 ---
 
-## ✅ Requirements
+## Requirements
 - Python 3.x
 - Install dependencies:
 ```
@@ -13,7 +13,7 @@ pip install flask cryptography
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 - `honeypots/`: Contains `ssh_server.py`, `ftp_server.py`, `http_server.py`
 - `webpanel/`: Flask dashboard (`app.py`) and the HTML template
 - `alerts/`: Simulated email alert
@@ -22,7 +22,7 @@ pip install flask cryptography
 
 ---
 
-## 🚀 How to Use
+## How to Use
 
 1. **Start all honeypots at once:**
 ```
@@ -50,7 +50,7 @@ python alerts/email_alert.py
 
 ---
 
-## 🧪 Testing the Honeypots
+## Testing the Honeypots
 
 - SSH:  
 ```
@@ -71,10 +71,10 @@ Check the updates on the **web dashboard**.
 
 ---
 
-## ⛔ Stop Services
+## Stop Services
 Press **Ctrl+C** on the terminal where `start_all.py` or each honeypot is running.
 
 ---
 
-## 🔒 License
+## License
 MIT License - see the LICENSE file for more details.
